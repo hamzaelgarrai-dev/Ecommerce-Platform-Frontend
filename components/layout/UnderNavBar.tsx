@@ -2,7 +2,7 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import CategoriesMenu from "./CategoriesMenu";
+import CategoriesMenu from "../CategoriesMenu";
 
 const UnderNavBar = () => {
 	const [isHover, setIsHover] = useState<boolean>(false);
@@ -56,7 +56,7 @@ const UnderNavBar = () => {
 						variants={subMenuAnimate}
 						className='absolute w-screen top-[8.2rem] origin-[50%_-170px] p-4'
 					>
-						<CategoriesMenu/>
+						<CategoriesMenu />
 					</motion.div>
 				</motion.div>
 				<ul className='flex items-center gap-5 '>
