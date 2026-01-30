@@ -6,7 +6,7 @@ import {
 	RefAttributes,
 	SetStateAction,
 } from "react";
-import CartItem from "./CartItem";
+import CartItem from "../CartItem";
 
 type CartProps = {
 	hideCart: boolean;
