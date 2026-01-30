@@ -1,6 +1,7 @@
 import { Minus, Plus } from "lucide-react";
-import { CartItemType } from "./components/Cart";
+// import { CartItemType } from "./Cart";
 import { useState } from "react";
+import { CartItemType } from "./Cart";
 
 const CartItem = ({ item }: { item: CartItemType }) => {
 	const [count, setCount] = useState(0);
