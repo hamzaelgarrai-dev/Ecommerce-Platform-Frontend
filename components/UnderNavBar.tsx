@@ -56,7 +56,7 @@ const UnderNavBar = () => {
 						variants={subMenuAnimate}
 						className='absolute w-screen top-[8.2rem] origin-[50%_-170px] p-4'
 					>
-						<CategoriesMenu/>
+						<CategoriesMenu />
 					</motion.div>
 				</motion.div>
 				<ul className='flex items-center gap-5 '>
