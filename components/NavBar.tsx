@@ -11,13 +11,15 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import UnderNavBar from "./UnderNavBar";
+import Cart from "./Cart";
 const NavBar = () => {
 	const [showLangue, setShowLangue] = useState<boolean>(false);
 	const [inputValue, setInputValue] = useState("");
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
+	const [hideCart, setHideCart] = useState<boolean>(false);
 	return (
 		<header>
-			<nav className='container mx-auto flex items-center my-3'>
+			<nav className='relative container mx-auto flex items-center my-3'>
 				<div className='text-primary text-4xl font-bold'>Logo</div>
 				<div className='flex-1 '>
 					<div className='w-[80%] mx-auto flex items-center gap-2 border-[1.5px] border-[#e1e1e6] rounded-full p-1'>
@@ -28,21 +30,23 @@ const NavBar = () => {
 							className='flex-1 focus:outline-none px-2 font-medium text-[16px] text-black'
 							placeholder='Search for product'
 						/>
-						{inputValue && (
+						{inputValue.trim() && (
 							<X
 								onClick={() => setInputValue("")}
 								className='text-primary cursor-pointer'
 							/>
 						)}
-						<div className='cursor-pointer inline-flex items-center gap-0.5 py-1.5 px-3 rounded-full text-white bg-primary'>
-							<Search size={18} />
-							Search
+						<div className='cursor-pointer inline-flex items-center gap-0.5 p-2 rounded-full text-white bg-primary'>
+							<Search size={20} />
 						</div>
 					</div>
 				</div>
 				<div className='flex items-center gap-2'>
 					<Heart />
-					<ShoppingCart />
+					<ShoppingCart
+						className='cursor-pointer'
+						onClick={() => setHideCart(true)}
+					/>
 
 					<div className='relative'>
 						<div className='absolute top-0 right-1/6 w-1.5 h-1.5 bg-red-500 rounded-full '></div>
@@ -201,6 +205,7 @@ const NavBar = () => {
 				</div>
 			</nav>
 			<UnderNavBar />
+			<Cart setHideCart={setHideCart} hideCart={hideCart} />
 		</header>
 	);
 };
