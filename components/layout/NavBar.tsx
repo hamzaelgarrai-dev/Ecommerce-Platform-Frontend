@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import UnderNavBar from "./UnderNavBar";
-import Cart from "../../features/cart/components/Cart";
+import Cart from "../ui/cart/Cart";
 const NavBar = () => {
 	const [showLangue, setShowLangue] = useState<boolean>(false);
 	const [inputValue, setInputValue] = useState("");
