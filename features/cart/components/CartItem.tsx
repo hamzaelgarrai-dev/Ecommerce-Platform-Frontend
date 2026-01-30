@@ -1,5 +1,5 @@
 import { Minus, Plus } from "lucide-react";
-import { CartItemType } from "./Cart";
+import { CartItemType } from "./components/Cart";
 import { useState } from "react";
 
 const CartItem = ({ item }: { item: CartItemType }) => {
