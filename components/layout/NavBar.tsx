@@ -22,7 +22,7 @@ const NavBar = () => {
 			<nav className='relative container mx-auto flex items-center my-3'>
 				<div className='text-primary text-4xl font-bold'>Logo</div>
 				<div className='flex-1 '>
-					<div className='w-[80%] mx-auto flex items-center gap-2 border-[1.5px] border-[#e1e1e6] rounded-full p-1'>
+					<div className='hidden md:flex w-[80%] mx-auto items-center gap-2 border-[1.5px] border-[#e1e1e6] rounded-full p-1'>
 						<input
 							type='text'
 							value={inputValue}
@@ -36,12 +36,15 @@ const NavBar = () => {
 								className='text-primary cursor-pointer'
 							/>
 						)}
-						<div className='cursor-pointer inline-flex items-center gap-0.5 p-2 rounded-full text-white bg-primary'>
+						<div className='cursor-pointer p-2 rounded-full text-white bg-primary'>
 							<Search size={20} />
 						</div>
 					</div>
 				</div>
 				<div className='flex items-center gap-2'>
+					<div className='md:hidden cursor-pointer '>
+						<Search />
+					</div>
 					<Heart />
 					<ShoppingCart
 						className='cursor-pointer'
