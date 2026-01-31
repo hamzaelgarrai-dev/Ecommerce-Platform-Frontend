@@ -45,7 +45,9 @@ const Cart = ({ hideCart, setHideCart }: CartProps) => {
 	return (
 		<>
 			<div
-				className={`${hideCart ? "" : "hidden"} absolute w-full h-screen`}
+				className={`${
+					hideCart ? "" : "hidden"
+				} absolute top-0 bg-black/25 w-full h-screen`}
 				onClick={() => setHideCart(false)}
 			></div>
 

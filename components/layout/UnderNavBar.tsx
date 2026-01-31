@@ -26,7 +26,7 @@ const UnderNavBar = () => {
 	};
 	return (
 		<div className='bg-[#FDEEEC]'>
-			<div className='container mx-auto flex items-center gap-5 py-2 font-semibold text-[16px] text-black'>
+			<div className='max-w-[97%] mx-auto flex items-center gap-5 py-2 font-semibold text-sm sm:text-[16px] text-black'>
 				<motion.div
 					onHoverStart={toggleHover}
 					onHoverEnd={toggleHover}
@@ -59,7 +59,7 @@ const UnderNavBar = () => {
 						<CategoriesMenu />
 					</motion.div>
 				</motion.div>
-				<ul className='flex items-center gap-5 '>
+				<ul className='flex items-center gap-5'>
 					<li>Home</li>
 					<li>Stores</li>
 					<li>Promotions</li>
