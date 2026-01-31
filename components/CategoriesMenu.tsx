@@ -1,203 +1,40 @@
-import { Headphones } from "lucide-react";
-
-const categories = [
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Parents, Kids & Toys",
-		Icon: Headphones,
-	},
-	{
-		title: "Safety & Security",
-		Icon: Headphones,
-	},
-	{
-		title: "Vehicles & Transportation",
-		Icon: Headphones,
-	},
-	{
-		title: "Apparel & Accessories",
-		Icon: Headphones,
-	},
-	{
-		title: "Home & Garden",
-		Icon: Headphones,
-	},
-	{
-		title: "Sports & Entertainment",
-		Icon: Headphones,
-	},
-	{
-		title: "Sportswear & Outdoor Apparel",
-		Icon: Headphones,
-	},
-	{
-		title: "Beauty",
-		Icon: Headphones,
-	},
-	{
-		title: "Jewelry, Eyewear & Watches",
-		Icon: Headphones,
-	},
-	{
-		title: "Shoes & Accessories",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-	{
-		title: "Consumer Electronics",
-		Icon: Headphones,
-	},
-];
+import { categories } from "@/utils/categories";
+import { useState } from "react";
 
 const CategoriesMenu = () => {
+	const [selectedCategory, setSelectedCategory] = useState(categories[0].title);
 	return (
-		<div className='flex max-h-[80vh]'>
-			<div className='w-[25%] border-r-2 border-muted-foreground overflow-scroll'>
-				<div>Categories for you </div>
-				<div> </div>
-				<div> </div>
-				<div> </div>
-				<div> </div>
-				<div> </div>
-				<div> </div>
-				<div> </div>
-				<div> </div>
-				<div> </div>
-				<div>Luggage, Bags & Cases </div>
-				<div>Packaging & Printing </div>
-				<div>Personal Care & Home Care </div>
-				<div>Health & Medical </div>
-				<div>Gifts & Crafts </div>
-				<div>Pet Supplies </div>
-				<div>School & Office Supplies </div>
-				<div>Industrial Machinery </div>
-				<div>Commercial Equipment & Machinery </div>
-				<div>Construction & Building Machinery </div>
-				<div>Construction & Real Estate </div>
-				<div>Furniture </div>
-				<div>Lights & Lighting </div>
-				<div>Home Appliances </div>
-				<div>Automotive Supplies & Tools </div>
-				<div>Vehicle Parts & Accessories </div>
-				<div>Tools & Hardware </div>
-				<div>Renewable Energy </div>
-				<div>Electrical Equipment & Supplies </div>
-				<div>Material Handling </div>
-				<div>Testing Instrument & Equipment </div>
-				<div>Power Transmission </div>
-				<div>Electronic Components </div>
-				<div>Agriculture, Food & Beverage </div>
-				<div>Raw Materials </div>
-				<div>Fabrication Services </div>
-				<div>Service </div>
+		<div className='flex max-h-[60vh]'>
+			<div className='categories w-fit flex flex-col gap-2 border-r-2 border-muted-foreground overflow-scroll py-4'>
+				{categories.map((category, index) => (
+					<div
+						key={index}
+						className={`flex items-center gap-2 ${
+							selectedCategory === category.title ? "bg-[#FDEEEC]" : ""
+						} hover:bg-[#FDEEEC] transition-colors duration-200 rounded-lg`}
+						onClick={() => setSelectedCategory(category.title)}
+					>
+						<div className='bg-[#FDEEEC] rounded-lg p-1.5 text-primary'>
+							<category.Icon />
+						</div>
+						{category.title}
+					</div>
+				))}
 			</div>
-			<div className='w-[30%]'></div>
+			<div className='flex-1 p-6'>
+				<div className='font-semibold text-xl mb-6'>{selectedCategory}</div>
+				<div className='flex flex-wrap p-4 gap-8'>
+					{[...Array(10)].map((item, index) => (
+						<div
+							key={index}
+							className='w-[16%] flex flex-col items-center gap-2'
+						>
+							<div className='rounded-full bg-muted-foreground w-22 h-22'></div>
+							<p>Category name</p>
+						</div>
+					))}
+				</div>
+			</div>
 		</div>
 	);
 };

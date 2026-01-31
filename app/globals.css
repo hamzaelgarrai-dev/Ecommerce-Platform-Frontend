@@ -28,3 +28,11 @@ body {
 	/* color: var(--foreground); */
 	font-family: Arial, Helvetica, sans-serif;
 }
+
+.categories::-webkit-scrollbar {
+	display: none;
+}
+.categories {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
