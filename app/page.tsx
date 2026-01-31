@@ -1,9 +1,3 @@
-
-
 export default function Home() {
-  return (
-    <div className="flex items-center justify-center font-sans ">
-     
-    </div>
-  );
+	return <div className='font-sans'></div>;
 }

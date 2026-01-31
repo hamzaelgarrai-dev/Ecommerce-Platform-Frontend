@@ -21,13 +21,13 @@ const CategoriesMenu = () => {
 					</div>
 				))}
 			</div>
-			<div className='flex-1 p-6'>
+			<div className='hidden sm:block flex-1 p-6 categories overflow-scroll'>
 				<div className='font-semibold text-xl mb-6'>{selectedCategory}</div>
 				<div className='flex flex-wrap p-4 gap-8'>
 					{[...Array(10)].map((item, index) => (
 						<div
 							key={index}
-							className='w-[16%] flex flex-col items-center gap-2'
+							className='w-[25%] lg:w-[15%] flex flex-col items-center gap-2'
 						>
 							<div className='rounded-full bg-muted-foreground w-22 h-22'></div>
 							<p>Category name</p>

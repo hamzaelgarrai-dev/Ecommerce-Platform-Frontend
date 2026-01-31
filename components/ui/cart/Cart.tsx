@@ -45,14 +45,14 @@ const Cart = ({ hideCart, setHideCart }: CartProps) => {
 	return (
 		<>
 			<div
-				className={`${hideCart ? '' : 'hidden'} h-screen z-50`}
+				className={`${hideCart ? "" : "hidden"} absolute w-full h-screen`}
 				onClick={() => setHideCart(false)}
 			></div>
 
 			<div
 				className={`${
 					hideCart ? "translate-x-0" : "translate-x-full"
-				}   w-[70%] absolute top-0 right-0 sm:w-[55%] md:w-[45%] lg:w-[40%] xl:w-[30%] h-screen bg-white p-4 flex flex-col border-l-2 border-muted-foreground  transition-transform duration-300 ease-in-out`}
+				} absolute top-0 right-0 w-[80%] sm:w-[65%] md:w-[55%] lg:w-[50%] xl:w-[35%] h-screen bg-white p-4 flex flex-col border-l-2 border-muted-foreground  transition-transform duration-300 ease-in-out`}
 			>
 				<div className='w-full flex items-center justify-between'>
 					<h3 className='font-semibold text-2xl'>Shopping Cart</h3>
