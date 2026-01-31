@@ -54,7 +54,7 @@ const UnderNavBar = () => {
 						initial='exit'
 						animate={isHover ? "enter" : "exit"}
 						variants={subMenuAnimate}
-						className='absolute w-screen top-[8.2rem] origin-[50%_-170px] font-normal'
+						className='absolute w-screen top-[8.2rem] origin-[50%_-170px] font-normal z-999 bg-white'
 					>
 						<CategoriesMenu />
 					</motion.div>
