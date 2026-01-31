@@ -12,14 +12,16 @@ import {
 import { useState } from "react";
 import UnderNavBar from "./UnderNavBar";
 import Cart from "../ui/cart/Cart";
+import SearchBar from "../SearchBar";
 const NavBar = () => {
 	const [showLangue, setShowLangue] = useState<boolean>(false);
 	const [inputValue, setInputValue] = useState("");
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
 	const [hideCart, setHideCart] = useState<boolean>(false);
+	const [showSearchBar, setShowSearchBar] = useState<boolean>(false);
 	return (
 		<header>
-			<nav className='relative container mx-auto flex items-center my-3'>
+			<nav className='relative max-w-[97%] mx-auto flex items-center my-3'>
 				<div className='text-primary text-4xl font-bold'>Logo</div>
 				<div className='flex-1 '>
 					<div className='hidden md:flex w-[80%] mx-auto items-center gap-2 border-[1.5px] border-[#e1e1e6] rounded-full p-1'>
@@ -42,7 +44,10 @@ const NavBar = () => {
 					</div>
 				</div>
 				<div className='flex items-center gap-2'>
-					<div className='md:hidden cursor-pointer '>
+					<div
+						className='md:hidden cursor-pointer'
+						onClick={() => setShowSearchBar(true)}
+					>
 						<Search />
 					</div>
 					<Heart />
@@ -209,6 +214,7 @@ const NavBar = () => {
 			</nav>
 			<UnderNavBar />
 			<Cart setHideCart={setHideCart} hideCart={hideCart} />
+			{showSearchBar && <SearchBar setShowSearchBar={setShowSearchBar} />}
 		</header>
 	);
 };
