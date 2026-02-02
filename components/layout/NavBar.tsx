@@ -13,6 +13,7 @@ import { useState } from "react";
 import UnderNavBar from "./UnderNavBar";
 import Cart from "../ui/cart/Cart";
 import SearchBar from "../SearchBar";
+import Link from "next/link";
 const NavBar = () => {
 	const [showLangue, setShowLangue] = useState<boolean>(false);
 	const [inputValue, setInputValue] = useState("");
@@ -22,9 +23,11 @@ const NavBar = () => {
 	return (
 		<header>
 			<nav className='relative max-w-[97%] mx-auto flex items-center my-3'>
-				<div className='text-primary text-4xl font-bold'>Logo</div>
+				<Link href='/' className='text-primary text-4xl font-bold'>
+					Logo
+				</Link>
 				<div className='flex-1 '>
-					<div className='hidden md:flex w-[80%] mx-auto items-center gap-2 border-[1.5px] border-[#e1e1e6] rounded-full p-1'>
+					<div className='hidden md:flex w-[80%] mx-auto items-center gap-2 border-[1.5px] border-border rounded-full p-1'>
 						<input
 							type='text'
 							value={inputValue}
@@ -65,9 +68,12 @@ const NavBar = () => {
 							<User />
 						</div>
 					) : (
-						<button className='rounded-xl text-white bg-primary px-4 py-2 font-semibold'>
+						<Link
+							href='/login'
+							className='rounded-xl text-white bg-primary px-4 py-2 font-semibold'
+						>
 							Log in
-						</button>
+						</Link>
 					)}
 					<div className='w-0.5 bg-[#e1e1e6] h-8 rounded-full'></div>
 					<button

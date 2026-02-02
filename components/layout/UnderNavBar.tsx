@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import CategoriesMenu from "../CategoriesMenu";
+import Link from "next/link";
 
 const UnderNavBar = () => {
 	const [isHover, setIsHover] = useState<boolean>(false);
@@ -60,7 +61,7 @@ const UnderNavBar = () => {
 					</motion.div>
 				</motion.div>
 				<ul className='flex items-center gap-5'>
-					<li>Home</li>
+					<Link href={"/"}>Home</Link>
 					<li>Stores</li>
 					<li>Promotions</li>
 					<li>Promotions</li>
