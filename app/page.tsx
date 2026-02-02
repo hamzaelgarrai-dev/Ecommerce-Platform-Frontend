@@ -1,5 +1,5 @@
 import ProductCard from "@/components/shared/ProductCard";
-import { Heart, ShoppingCart } from "lucide-react";
+import { Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -40,7 +40,7 @@ export default function Home() {
 					<button className='flex-1 bg-primary text-white py-2.5 cursor-pointer px-4 flex items-center justify-center gap-1.5 rounded-bl-3xl rounded-tr-3xl'>
 						<span>Add to Cart</span>
 					</button>
-					<div className='rounded-full cursor-pointer p-2 w-fit h-fit bg-[#FDEEEC] text-primary'>
+					<div className='rounded-full cursor-pointer p-2 w-fit h-fit bg-muted-foreground'>
 						<Heart />
 					</div>
 				</div>

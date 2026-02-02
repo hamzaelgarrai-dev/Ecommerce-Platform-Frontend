@@ -1,6 +1,6 @@
 "use client";
 import ProductCounter from "@/components/shared/ProductCounter";
-import { Heart, Minus, Plus, Star } from "lucide-react";
+import { Heart, Star } from "lucide-react";
 import Image from "next/image";
 
 // { params }: { params: Promise<{ slug: string }> }
