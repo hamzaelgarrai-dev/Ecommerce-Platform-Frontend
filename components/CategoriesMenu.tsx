@@ -5,7 +5,7 @@ const CategoriesMenu = () => {
 	const [selectedCategory, setSelectedCategory] = useState(categories[0].title);
 	return (
 		<div className='flex max-h-[60vh]'>
-			<div className='categories w-fit flex flex-col gap-2 border-r-2 border-muted-foreground overflow-scroll py-4'>
+			<div className='categories w-fit flex flex-col gap-2 border-r-2 border-border overflow-scroll py-4'>
 				{categories.map((category, index) => (
 					<div
 						key={index}
