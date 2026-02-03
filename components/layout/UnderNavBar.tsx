@@ -3,9 +3,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import CategoriesMenu from "../CategoriesMenu";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const UnderNavBar = () => {
 	const [isHover, setIsHover] = useState<boolean>(false);
+	const pathname = usePathname();
 	const toggleHover = () => {
 		setIsHover(!isHover);
 	};
@@ -25,7 +27,7 @@ const UnderNavBar = () => {
 		},
 	};
 	return (
-		<div className='bg-[#FDEEEC]'>
+		<div className={`${pathname === "/" ? "" : "hidden"} bg-[#FDEEEC]`}>
 			<div className='max-w-[97%] mx-auto flex items-center gap-5 py-2 font-semibold text-sm sm:text-[16px] text-black'>
 				<motion.div
 					onHoverStart={toggleHover}

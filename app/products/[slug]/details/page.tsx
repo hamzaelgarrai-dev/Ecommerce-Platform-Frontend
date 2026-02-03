@@ -8,7 +8,7 @@ const page = () => {
 	// const { slug } = await params;
 
 	return (
-		<div className='min-h-[calc(100vh-130px)] w-screen flex justify-between items-start gap-4 p-10'>
+		<div className='min-h-[calc(100vh-130px)] w-full bg-lime-400 flex justify-between items-start gap-4 p-10'>
 			<div className='w-[55%] rounded-3xl space-y-2'>
 				<div className='rounded-2xl border-2 border-primary overflow-hidden'>
 					<Image src={"/hoodie.png"} alt='hoodie' width={800} height={900} />

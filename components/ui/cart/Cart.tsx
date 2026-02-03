@@ -7,6 +7,7 @@ import {
 	SetStateAction,
 } from "react";
 import CartItem from "./CartItem";
+import Link from "next/link";
 
 type CartProps = {
 	hideCart: boolean;
@@ -70,9 +71,13 @@ const Cart = ({ hideCart, setHideCart }: CartProps) => {
 						<CartItem key={index} item={item} />
 					))}
 				</div>
-				<button className='w-full rounded-full uppercase bg-primary text-white py-3 font-semibold cursor-pointer'>
+				<Link
+					href='/shoppingcart'
+					className='w-full rounded-full text-center uppercase bg-primary text-white py-3 font-semibold'
+					onClick={() => setHideCart(false)}
+				>
 					Complete order
-				</button>
+				</Link>
 			</div>
 		</>
 	);

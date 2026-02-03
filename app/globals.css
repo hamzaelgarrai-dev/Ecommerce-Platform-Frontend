@@ -39,3 +39,9 @@ body {
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 }
+
+input[type="checkbox"] {
+	accent-color: var(--primary);
+	height: 16px; /* Adjust size as needed */
+	width: 16px;
+}

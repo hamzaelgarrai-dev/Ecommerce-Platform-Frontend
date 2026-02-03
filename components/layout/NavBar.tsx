@@ -14,12 +14,26 @@ import UnderNavBar from "./UnderNavBar";
 import Cart from "../ui/cart/Cart";
 import SearchBar from "../SearchBar";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
+
 const NavBar = () => {
+	const searchParams = useSearchParams();
 	const [showLangue, setShowLangue] = useState<boolean>(false);
-	const [inputValue, setInputValue] = useState("");
+	const [inputValue, setInputValue] = useState(
+		searchParams.get("search") || ""
+	);
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
 	const [hideCart, setHideCart] = useState<boolean>(false);
 	const [showSearchBar, setShowSearchBar] = useState<boolean>(false);
+	const router = useRouter();
+
+	const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		if (inputValue.trim()) {
+			router.push(`products?search=${inputValue}`);
+			console.log(searchParams.get("search"));
+		}
+	};
 	return (
 		<header>
 			<nav className='relative max-w-[97%] mx-auto flex items-center my-3'>
@@ -27,7 +41,10 @@ const NavBar = () => {
 					Logo
 				</Link>
 				<div className='flex-1 '>
-					<div className='hidden md:flex w-[80%] mx-auto items-center gap-2 border-[1.5px] border-border rounded-full p-1'>
+					<form
+						onSubmit={handleSubmit}
+						className='hidden md:flex w-[80%] mx-auto items-center gap-2 border-[1.5px] border-border rounded-full p-1'
+					>
 						<input
 							type='text'
 							value={inputValue}
@@ -41,10 +58,13 @@ const NavBar = () => {
 								className='text-primary cursor-pointer'
 							/>
 						)}
-						<div className='cursor-pointer p-2 rounded-full text-white bg-primary'>
-							<Search size={20} />
-						</div>
-					</div>
+						<button
+							type='submit'
+							className='cursor-pointer p-1.5 rounded-full text-white bg-primary'
+						>
+							<Search size={24} />
+						</button>
+					</form>
 				</div>
 				<div className='flex items-center gap-2'>
 					<div

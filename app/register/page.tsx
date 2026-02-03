@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const page = () => {
 	return (
-		<div className='w-screen h-[calc(100vh-130px)] flex items-center justify-center'>
+		<div className='w-screen h-[calc(100vh-130px)] flex justify-center pt-20'>
 			<div className='w-[80%] sm:w-[50%] md:w-[45%] lg:w-[40%] xl:w-[35%] space-y-4'>
 				<Slack size={34} className='text-primary fill-primary' />
 				<h1 className='font-semibold text-4xl'>Create an account</h1>
