@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const page = () => {
 	return (
-		<div className='w-screen h-[calc(100vh-130px)] flex items-center justify-center'>
+		<div className='w-screen min-h-[calc(100vh-130px)] flex justify-center pt-20'>
 			{/* <div className='hidden relative w-[49%] h-full rounded-3xl  overflow-hidden'>
 				<div className='absolute w-full h-full bg-radial-[at_50%_75%] from-[#fd874d] via-[#f6b8a1] to-[#f7e2e0] to-90% z-0'></div>
 				<div className='absolute w-full h-full backdrop-blur-3xl bg-black/5 flex flex-col items-center justify-center'>
