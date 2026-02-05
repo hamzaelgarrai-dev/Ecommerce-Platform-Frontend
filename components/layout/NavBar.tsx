@@ -3,10 +3,8 @@ import {
 	Bell,
 	ChevronDown,
 	Globe,
-	Heart,
 	Search,
 	ShoppingCart,
-	User,
 	X,
 } from "lucide-react";
 import { useState } from "react";
@@ -15,7 +13,7 @@ import Cart from "../ui/cart/Cart";
 import SearchBar from "../SearchBar";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import ProfileButton from "../ProfileButton";
+import ProfileDropDownMenuButton from "../ProfileDropDownMenuButton";
 
 const NavBar = () => {
 	const searchParams = useSearchParams();
@@ -86,7 +84,7 @@ const NavBar = () => {
 						<Bell size={26} />
 					</div>
 					{isAuthenticated ? (
-						<ProfileButton/>
+						<ProfileDropDownMenuButton />
 					) : (
 						<Link
 							href='/login'

@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { ForwardRefExoticComponent, RefAttributes, useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const profileDrowDownList: {
 	text: string;
@@ -42,7 +43,7 @@ const subMenuAnimate = {
 	},
 };
 
-const ProfileButton = () => {
+const ProfileDropDownMenuButton = () => {
 	const [isHover, setIsHover] = useState<boolean>(false);
 	const toggleHover = () => {
 		setIsHover(!isHover);
@@ -67,7 +68,8 @@ const ProfileButton = () => {
 				>
 					<ul className='space-y-2'>
 						{profileDrowDownList.map((item, index) => (
-							<li
+							<Link
+								href='/buyer/dashboard'
 								key={index}
 								className='group flex items-center gap-2 text-foreground bg-white hover:bg-primary/10 rounded-full px-3 py-1.5 transform-content cursor-pointer'
 							>
@@ -78,7 +80,7 @@ const ProfileButton = () => {
 								<span className='group-hover:text-black transition-colors'>
 									{item.text}
 								</span>
-							</li>
+							</Link>
 						))}
 					</ul>
 				</motion.div>
@@ -87,4 +89,4 @@ const ProfileButton = () => {
 	);
 };
 
-export default ProfileButton;
+export default ProfileDropDownMenuButton;
