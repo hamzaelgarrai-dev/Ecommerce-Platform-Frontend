@@ -30,7 +30,7 @@ const NavBar = () => {
 	const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		if (inputValue.trim()) {
-			router.push(`products?search=${inputValue}`);
+			router.push(`/products?search=${inputValue}`);
 			console.log(searchParams.get("search"));
 		}
 	};

@@ -1,11 +1,10 @@
 import SearchProducts from "@/components/SearchProducts";
-import ProductCardTwo from "@/components/shared/ProductCardTwo";
 import { Star } from "lucide-react";
 
 const page = () => {
 	return (
-		<div className='w-full min-h-[calc(100vh-70px)] flex gap-4 '>
-			<div className='w-[18%] h-full py-3 bg-white text-foreground space-y-4'>
+		<div className='w-full flex gap-4 '>
+			<div className='hidden lg:block flex-[0.2] h-full py-3 bg-white text-foreground space-y-4'>
 				<div>
 					<h2 className='flex items-center justify-between text-[16px] font-semibold text-black'>
 						<span>Filter</span>
@@ -54,7 +53,7 @@ const page = () => {
 				</div>
 				<hr className='border rounded-full border-border' />
 			</div>
-			<SearchProducts/>
+			<SearchProducts />
 		</div>
 	);
 };

@@ -8,10 +8,16 @@ const page = () => {
 	// const { slug } = await params;
 
 	return (
-		<div className='min-h-[calc(100vh-130px)] w-full bg-lime-400 flex justify-between items-start gap-4 p-10'>
-			<div className='w-[55%] rounded-3xl space-y-2'>
-				<div className='rounded-2xl border-2 border-primary overflow-hidden'>
-					<Image src={"/hoodie.png"} alt='hoodie' width={800} height={900} />
+		<div className='w-full flex flex-col lg:flex-row gap-4 p-10'>
+			<div className='flex-[1.5] rounded-3xl space-y-2'>
+				<div className='rounded-2xl border-2 border-primary aspect-square overflow-hidden'>
+					<Image
+						src={"/zustand.png"}
+						alt='hoodie'
+						width={400}
+						height={200}
+						className='w-full h-full object-cover'
+					/>
 				</div>
 				<div className='flex gap-2 '>
 					<div className='rounded-2xl border-2 border-primary overflow-hidden'>
@@ -56,7 +62,7 @@ const page = () => {
 					</div>
 				</div>
 			</div>
-			<div className='w-[45%] space-y-4'>
+			<div className='flex-1 space-y-4'>
 				<p className='text-foreground'>category name</p>
 				<div className='flex items-center gap-4'>
 					<h1 className='font-semibold text-3xl'>Houdie</h1>
@@ -65,17 +71,19 @@ const page = () => {
 					</div>
 				</div>
 				<div className='flex'>
-					<Star size={20} className='fill-yellow-300 stroke-yellow-300' />
-					<Star size={20} className='fill-yellow-300 stroke-yellow-300' />
-					<Star size={20} className='fill-yellow-300 stroke-yellow-300' />
-					<Star size={20} className='fill-yellow-300 stroke-yellow-300' />
-					<Star size={20} className='fill-yellow-300 stroke-yellow-300' />
+					{[...Array(5)].map((_, index) => (
+						<Star
+							key={index}
+							size={20}
+							className='fill-yellow-400 stroke-yellow-400'
+						/>
+					))}
 				</div>
 				<div className='flex items-center gap-2'>
 					<p className='font-semibold text-4xl text-primary'>$799</p>
 					<p className='text-foreground line-through text-xl'>$1000</p>
 				</div>
-				<p className='text-foreground max-w-[65%]'>
+				<p className='text-foreground max-w-md'>
 					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui dolore
 					nesciunt repudiandae saepe excepturi? Quia itaque aspernatur nostrum
 					aut asperiores, nesciunt nam. Vero impedit autem, vitae saepe
