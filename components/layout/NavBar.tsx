@@ -15,6 +15,7 @@ import Cart from "../ui/cart/Cart";
 import SearchBar from "../SearchBar";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
+import ProfileButton from "../ProfileButton";
 
 const NavBar = () => {
 	const searchParams = useSearchParams();
@@ -22,7 +23,7 @@ const NavBar = () => {
 	const [inputValue, setInputValue] = useState(
 		searchParams.get("search") || ""
 	);
-	const [isAuthenticated, setIsAuthenticated] = useState(false);
+	const [isAuthenticated, setIsAuthenticated] = useState(true);
 	const [hideCart, setHideCart] = useState<boolean>(false);
 	const [showSearchBar, setShowSearchBar] = useState<boolean>(false);
 	const router = useRouter();
@@ -35,7 +36,7 @@ const NavBar = () => {
 		}
 	};
 	return (
-		<header>
+		<header className='fixed top-0 w-screen bg-white z-10'>
 			<nav className='relative max-w-[97%] mx-auto flex items-center my-3'>
 				<Link href='/' className='text-primary text-4xl font-bold'>
 					Logo
@@ -66,27 +67,26 @@ const NavBar = () => {
 						</button>
 					</form>
 				</div>
-				<div className='flex items-center gap-2'>
+				<div className='flex items-center gap-2 relative'>
 					<div
 						className='md:hidden cursor-pointer'
 						onClick={() => setShowSearchBar(true)}
 					>
 						<Search />
 					</div>
-					<Heart />
+
 					<ShoppingCart
+						size={26}
 						className='cursor-pointer'
 						onClick={() => setHideCart(true)}
 					/>
 
 					<div className='relative'>
 						<div className='absolute top-0 right-1/6 w-1.5 h-1.5 bg-red-500 rounded-full '></div>
-						<Bell />
+						<Bell size={26} />
 					</div>
 					{isAuthenticated ? (
-						<div className='bg-white rounded-xl p-1.5 border-2 border-[#e1e1e6]'>
-							<User />
-						</div>
+						<ProfileButton/>
 					) : (
 						<Link
 							href='/login'
