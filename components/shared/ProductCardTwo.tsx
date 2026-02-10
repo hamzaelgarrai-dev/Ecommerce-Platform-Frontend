@@ -5,6 +5,7 @@ import Link from "next/link";
 const images = ["/saad.JPG", "/zustand.png", "/hoodie.png"];
 const ProductCardTwo = () => {
 	// console.log(Math.floor(Math.random() * 3));
+    
 	return (
 		<div className='group relative h-full flex flex-col rounded-3xl border border-border overflow-hidden bg-white'>
 			<div className='absolute bg-[#FDEEEC] right-0 top-0 rounded-bl-2xl rounded-tr-2xl text-primary text-sm py-2 px-2 z-2'>

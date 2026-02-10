@@ -69,7 +69,7 @@ const ProfileDropDownMenuButton = () => {
 					<ul className='space-y-2'>
 						{profileDrowDownList.map((item, index) => (
 							<Link
-								href='/buyer/dashboard'
+								href='/buyer/dashboard/favorite'
 								key={index}
 								className='group flex items-center gap-2 text-foreground bg-white hover:bg-primary/10 rounded-full px-3 py-1.5 transform-content cursor-pointer'
 							>
