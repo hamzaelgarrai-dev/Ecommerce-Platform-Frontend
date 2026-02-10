@@ -1,13 +1,5 @@
-import {
-	ArrowLeftRight,
-	ClipboardList,
-	Headset,
-	Heart,
-	LayoutDashboard,
-	LogOut,
-	MessageSquareText,
-	UserCog,
-} from "lucide-react";
+import BuyerSideSashboard from "@/components/layout/BuyerSideSashboard";
+
 
 const layout = ({
 	children,
@@ -15,41 +7,8 @@ const layout = ({
 	children: React.ReactNode;
 }>) => {
 	return (
-		<div className='w-full flex '>
-			<aside className='h-[calc(100vh-71px)] flex flex-col justify-between p-2 rounded-full'>
-				<div className='flex flex-col gap-4'>
-					<div className='rounded-4xl bg-muted-foreground border border-border p-1 text-black'>
-						<div className='rounded-full p-2.5 '>
-							<LayoutDashboard />
-						</div>
-						<div className='rounded-full p-2.5 flex items-center gap-2 '>
-							<Headset />
-						</div>
-					</div>
-					<div className='space-y-2 w-fit bg-muted-foreground border border-border text-black p-1 rounded-full'>
-						<div className='rounded-full p-2.5 bg-primary text-white'>
-							<Heart />
-						</div>
-						<div className='rounded-full p-2.5'>
-							<ClipboardList />
-						</div>
-						<div className='rounded-full p-2.5'>
-							<MessageSquareText />
-						</div>
-						<div className='rounded-full p-2.5'>
-							<UserCog />
-						</div>
-					</div>
-				</div>
-				<div className='space-1 p-1 bg-muted-foreground border border-border text-black  rounded-full '>
-					<div className='rounded-full p-2.5'>
-						<ArrowLeftRight />
-					</div>
-					<div className='rounded-full p-2.5'>
-						<LogOut />
-					</div>
-				</div>
-			</aside>
+		<div className='w-full flex py-4 '>
+			<BuyerSideSashboard/>
 			{children}
 		</div>
 	);
