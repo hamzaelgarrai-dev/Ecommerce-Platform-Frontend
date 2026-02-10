@@ -6,11 +6,13 @@ import Footer from "@/components/layout/Footer";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
+	weight: ["400", "500", "600", "700"],
 	subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
 	variable: "--font-geist-mono",
+	weight: ["400", "500", "600", "700"],
 	subsets: ["latin"],
 });
 

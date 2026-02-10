@@ -1,12 +1,12 @@
 "use client";
 import {
-	ArrowLeftRight,
 	ClipboardList,
 	Headset,
 	Heart,
 	LayoutDashboard,
 	LogOut,
 	MessageSquareText,
+	SendToBack,
 	UserCog,
 } from "lucide-react";
 import Link from "next/link";
@@ -80,7 +80,7 @@ const BuyerSideSashboard = () => {
 			</div>
 			<div className='space-1 p-1 bg-muted-foreground border border-border text-black  rounded-full '>
 				<div className='rounded-full p-2.5'>
-					<ArrowLeftRight />
+					<SendToBack />
 				</div>
 				<div className='rounded-full p-2.5'>
 					<LogOut />
