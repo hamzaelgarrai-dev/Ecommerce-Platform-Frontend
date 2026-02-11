@@ -6,7 +6,7 @@ const page = () => {
 	return (
 		<div className='w-full bg-muted-foreground flex gap-4 p-20 rounded-4xl'>
 			<div className='w-[70%] flex flex-col gap-4'>
-				{[...Array(4)].map((item, index) => (
+				{[...Array(9)].map((item, index) => (
 					<div
 						key={index}
 						className='w-full bg-white rounded-3xl p-4 flex items-center gap-4'
@@ -38,7 +38,7 @@ const page = () => {
 					</div>
 				))}
 			</div>
-			<div className='w-[30%] rounded-4xl bg-white p-6 flex flex-col gap-4 h-fit '>
+			<div className='w-[30%] sticky top-[80px] rounded-4xl bg-white p-6 flex flex-col gap-4 h-fit '>
 				<h2 className='font-semibold text-xl mb-2'>Order Summary</h2>
 				<div className='flex flex-col gap-2'>
 					<div className='flex items-center justify-between'>
