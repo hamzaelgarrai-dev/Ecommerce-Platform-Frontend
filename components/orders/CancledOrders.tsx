@@ -2,7 +2,7 @@ import { ArrowRight, Handbag, MapPin, Minus, Package, Truck } from "lucide-react
 
 const CancledOrders = () => {
 	return (
-		<div className='border-2 border-border  rounded-2xl'>
+		<div className='border-2 border-border  rounded-3xl overflow-hidden'>
 			<div className='p-4 space-y-4'>
 				<div className='flex items-center justify-between'>
 					<div>
