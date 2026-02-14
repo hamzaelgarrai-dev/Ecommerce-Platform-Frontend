@@ -116,7 +116,7 @@ const BuyerSideSashboard = () => {
 			</div>
 			<div className='space-y-2 bg-muted-foreground border border-border text-black p-1 w-13.25 xl:w-36 rounded-3xl overflow-hidden hover:w-36 transition-all duration-300 ease-in-out'>
 				<Link
-					href='/buyer/dashboard/profile'
+					href='/seller'
 					className={`flex items-center gap-1 rounded-full hover:bg-primary hover:text-white transition-colors cursor-pointer`}
 				>
 					<button
